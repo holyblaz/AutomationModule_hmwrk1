@@ -28,4 +28,28 @@ public class CashbackHackServiceTest {
         int expected = 500;
         assertEquals(expected, actual);
     }
+
+    @org.junit.jupiter.api.Test
+    public void shouldReturnZeroCashbackJupApi() {
+        CashbackHackService service = new CashbackHackService();
+        int actual = service.remain(1000);
+        int expected = 0;
+        assertEquals(expected, actual);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void shouldReturnOneCashbackJupApi() {
+        CashbackHackService service = new CashbackHackService();
+        int actual = service.remain(999);
+        int expected = 1;
+        assertEquals(expected, actual);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void shouldReturnCashbackJupApi() {
+        CashbackHackService service = new CashbackHackService();
+        int actual = service.remain(1001);
+        int expected = 999;
+        assertEquals(expected, actual);
+    }
 }
